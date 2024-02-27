@@ -22,3 +22,22 @@ If a character provided is not in the opposing alphabet, simply leave it as be.
 
 
 // Solution
+
+function SubstitutionCipher(abc1, abc2) {
+
+	this.substitute = function (str, currentAbc, targetAbc) {
+  	let encoded = "";
+ 		for (let i = 0; i < str.length; i++) {
+   		encoded += targetAbc[currentAbc.indexOf(str[i])] || str[i];
+    }
+    return encoded;
+  }
+  
+  this.encode = function (str) {
+  	return this.substitute(str, abc1, abc2);
+  }
+  
+  this.decode = function (str) {
+  	return this.substitute(str, abc2, abc1);
+  }
+}
