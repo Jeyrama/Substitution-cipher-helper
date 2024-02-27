@@ -43,3 +43,12 @@ function SubstitutionCipher(abc1, abc2) {
 }
 
 // or
+
+function SubstitutionCipher(abc1, abc2) {
+  this.encode = function (str) {
+    return str.replace(/./g,x=>abc2[abc1.indexOf(x)]||x)
+  }
+  this.decode = function (str) {
+    return str.replace(/./g,x=>abc1[abc2.indexOf(x)]||x)
+  }
+}
