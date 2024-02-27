@@ -41,3 +41,5 @@ function SubstitutionCipher(abc1, abc2) {
   	return this.substitute(str, abc2, abc1);
   }
 }
+
+// or
